@@ -1,0 +1,26 @@
+{
+    "name": "hatch/socialNetwork",
+    "version": "0.0.1",
+    "description": "Social network module for hatch",
+    "require": {
+        "silex/silex": "~1.2",
+        "symfony/validator": "~2.6",
+        "symfony/console": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hatch\\SocialNetwork\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Silaev",
+            "email": "pasha.gap@gmail.com",
+            "role": "Developer"
+        }
+    ]
+}
