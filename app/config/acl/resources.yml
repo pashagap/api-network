@@ -1,208 +1,38 @@
-- name: Template
-  entity: inspections.template.controller
+- name: Posts
+  entity: socialNetwork.posts.controller
   locationRequired: true
   actions:
     - name: read all
-      description: fetch all templates
-      slug: inspections.template.read
+      description: fetch all posts
+      slug: socialNetwork.posts.read
       method: read
 
     - name: read by id
-      description: read template by id
-      slug: inspections.template.readById
+      description: read post by id
+      slug: socialNetwork.posts.readById
       method: readById
 
     - name: create new
-      description: create new template
-      slug: inspections.template.create
+      description: create new post
+      slug: socialNetwork.posts.create
       method: create
 
     - name: update by id
-      description: update specific template
-      slug: inspections.template.updateById
+      description: update specific post
+      slug: socialNetwork.posts.updateById
       method: updateById
-
-    - name: read Simple Template Report
-      description: read simple template report for the given month and year
-      slug: inspections.template.readSimpleTemplateReport
-      method: readSimpleTemplateReport
-
-
-- name: Template Versions
-  entity: inspections.templateVersion.controller
-  locationRequired: true
-  actions:
-    - name: read all
-      description: fetch all templates
-      slug: inspections.templateVersion.read
-      method: read
-
-    - name: read by id
-      description: read template by id
-      slug: inspections.templateVersion.readById
-      method: readById
-
-    - name: create new
-      description: create new template
-      slug: inspections.templateVersion.create
-      method: create
-
-    - name: update by id
-      description: update specific template
-      slug: inspections.templateVersion.updateById
-      method: updateById
-
-    - name: read by template id
-      descirption: fetch template versions of a template
-      slug: inspections.templateVersion.readByTemplateId
-      method: readByTemplateId
-
-    - name: read simple template version report
-      description: fetch template version report
-      slug: inspections.templateVersion.readSimpleTemplateVersionReport
-      method: readSimpleTemplateVersionReport
-
-
-- name: Inspections
-  entity: inspections.inspection.controller
-  locationRequired: true
-  actions:
-    - name: read
-      description: read all inspections from a location
-      slug: inspections.inspections.read
-      method: read
-
-    - name: read by id
-      description: read inspection by id
-      slug: inspections.inspection.readById
-      method: readById
-
-    - name: create new
-      description: create new inspection
-      slug: inspections.inspection.create
-      method: create
-
-    - name: read by temlate version
-      desciption: vetch inspections by template version
-      slug: inspections.inspection.readByTemplateVersionId
-      method: readByTemplateVersionId
 
     - name: delete by id
-      description: delete specific inspection
-      slug: inspections.inspection.deleteById
+      description: delete specific post
+      slug: socialNetwork.posts.deleteById
       method: deleteById
 
-    - name: update by id
-      description: update specific inspection
-      slug: inspections.inspection.updateById
-      method: updateById
+    - name: create comment
+      description: create new comment to post by id
+      slug: socialNetwork.posts.comments.createCommentToId
+      method: createCommentToId
 
-    - name: read comments by inspection id
-      description: read comments of inspection
-      slug: inspections.inspection.readCommentsByInspectionId
-      method: readCommentsByInspectionId
-
-    - name: read dashboard
-      description: read inspections dashboard
-      slug: inspections.inspection.readDashboard
-      method: readDashboard
-
-    - name: read statistic
-      description: read inspections statistic
-      slug: inspections.inspection.readStats
-      method: readStats
-
-    - name: read inspection report
-      description: read inspections report
-      slug: inspections.inspection.readInspectionReport
-      method: readInspectionReport
-
-    - name: create new comment
-      description: create new comment to inspection
-      slug: inspections.inspection.createCommentToInspectionById
-      method: createCommentToInspectionById
-
-
-- name: Answers
-  entity: inspections.answer.controller
-  locationRequired: true
-  actions:
-    - name: read
-      description: read from location
-      slug: inspections.answer.read
-      method: read
-
-    - name: read by id
-      description: read answer by id
-      slug: inspections.answer.readById
-      method: readById
-
-    - name: create new
-      description: create new answer
-      slug: inspections.answer.create
-      method: create
-
-    - name: update existing
-      description: update existing answer
-      slug: inspections.answer.updateById
-      method: updateById
-
-    - name: read by inspection
-      desciption: fetch answer by inspection
-      slug: inspections.answer.readByInspectionId
-      method: readByInspectionId
-
-
-- name: Work orders
-  entity: inspections.workOrder.controller
-  locationRequired: true
-  actions:
-    - name: create new
-      description: create new work order
-      slug: inspections.workOrder.create
-      method: create
-
-    - name: read by inspection
-      description: read work orders by inspection id
-      slug: inspections.workOrder.readByInspectionId
-      method: readByInspectionId
-
-    - name: read by id
-      description: fetch work order by id
-      slug: inspections.workOrder.readById
-      method: readById
-
-    - name: read by template version
-      description: read work orders by template version id
-      slug: inspections.workOrder.readByTemplateVersionId
-      method: readByTemplateVersionId
-
-    - name: read all from location
-      description: read work orders from the specific location
-      slug: inspections.workOrder.read
-      method: read
-
-    - name: read comments by work order id
-      description: read comments of work order
-      slug: inspections.workOrder.readCommentsByWorkOrderId
-      method: readCommentsByWorkOrderId
-
-    - name: create new comment
-      description: create new comment to work order
-      slug: inspections.workOrder.createCommentToWorkOrderById
-      method: createCommentToWorkOrderById
-
-    - name: update work order
-      description: update existing work order
-      slug: inspections.workOrder.updateById
-      method: updateById
-
-    - name: read dashboard
-      description: read work orders dashboard
-      slug: inspections.workOrder.readDashboard
-      method: readDashboard
-
-    - name: read simple work order report
-      description: fetch work order report
-      slug: inspections.workOrder.readSimpleWorkOrderReport
-      method: readSimpleWorkOrderReport
+    - name: read comments
+      description: read comments by post id
+      slug: socialNetwork.posts.comments.readCommentsById
+      method: readCommentsById

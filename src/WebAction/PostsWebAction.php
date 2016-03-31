@@ -1,22 +1,33 @@
 <?php
 
-namespace Hatch\Inspections\WebAction;
+namespace Hatch\SocialNetwork\WebAction;
 
 use Hatch\Core\WebAction\AbstractWebAction;
 
 /**
- * Class TemplateWebAction
+ * Class PostWebAction
  *
- * @package Hatch\Inspections\WebAction
+ * @package Hatch\SocialNetwork\WebAction
  */
-class TemplateWebAction extends AbstractWebAction
+class PostsWebAction extends AbstractWebAction
 {
+    public function create()
+    {
+        $data = $this->sysApp['request']->request->all();
+
+        return $this->callControllerAction(
+            'socialNetwork.posts.controller',
+            'create',
+            [$data]
+        );
+    }
+
     public function read()
     {
         $queryData = $this->sysApp['request']->query->all();
 
         return $this->callControllerAction(
-            'inspections.template.controller',
+            'socialNetwork.posts.controller',
             'read',
             [$queryData]
         );
@@ -25,7 +36,7 @@ class TemplateWebAction extends AbstractWebAction
     public function readById($id)
     {
         return $this->callControllerAction(
-            'inspections.template.controller',
+            'socialNetwork.posts.controller',
             'readById',
             [$id]
         );
@@ -36,7 +47,7 @@ class TemplateWebAction extends AbstractWebAction
         $data = $this->sysApp['request']->request->all();
 
         return $this->callControllerAction(
-            'inspections.template.controller',
+            'socialNetwork.posts.controller',
             'updateById',
             [$id, $data]
         );
@@ -45,35 +56,29 @@ class TemplateWebAction extends AbstractWebAction
     public function deleteById($id)
     {
         return $this->callControllerAction(
-            'inspections.template.controller',
+            'socialNetwork.posts.controller',
             'deleteById',
             [$id]
         );
     }
 
-    public function create()
+    public function createCommentToId($postId)
     {
         $data = $this->sysApp['request']->request->all();
 
         return $this->callControllerAction(
-            'inspections.template.controller',
-            'create',
-            [$data]
+            'socialNetwork.posts.controller',
+            'createCommentToId',
+            [$postId, $data]
         );
     }
 
-    public function readSimpleTemplateReport()
+    public function readCommentsById($postId)
     {
-        $createdDate = $this->sysApp['request']->query->get('createdDate');
-        $modifiedDate = $this->sysApp['request']->query->get('modifiedDate');
-
-        $createdDate = null === $createdDate ? null : new \DateTime($createdDate);
-        $modifiedDate = null === $modifiedDate ? null : new \DateTime($modifiedDate);
-
         return $this->callControllerAction(
-            'inspections.template.controller',
-            'readSimpleTemplateReport',
-            [$createdDate, $modifiedDate]
+            'socialNetwork.posts.controller',
+            'readCommentsById',
+            [$postId]
         );
     }
 }

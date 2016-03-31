@@ -1,15 +1,15 @@
 <?php
 
-namespace Hatch\Inspections\Model\Entities\Inspection\MongoDB\MongoDM;
+namespace Hatch\SocialNetwork\Model\Entities\Posts\MongoDB\MongoDM;
 
 use Hatch\Core\Model\Common\MongoDB\MongoDM\AbstractNormalizer;
 
 /**
- * Class CommentNormalizer
+ * Class CommentsNormalizer
  *
- * @package Hatch\Inspections\Model\Entities\Inspection\MongoDB\MongoDM
+ * @package Hatch\SocialNetwork\Model\Entities\Posts\MongoDB\MongoDM
  */
-class CommentNormalizer extends AbstractNormalizer
+class CommentsNormalizer extends AbstractNormalizer
 {
     protected function getNormalizationRulesList()
     {

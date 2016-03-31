@@ -1,16 +1,16 @@
 <?php
 
-namespace Hatch\Inspections\Model\Entities\Inspection\MongoDB\MongoDM;
+namespace Hatch\SocialNetwork\Model\Entities\Posts\MongoDB\MongoDM;
 
 use Hatch\Core\Model\Common\MongoDB\MongoDM\AbstractActiveRecord;
 use Hatch\Core\Model\Entities\User\MongoDB\MongoDM\Model as UserModel;
 
 /**
- * Class CommentActiveRecord
+ * Class CommentsActiveRecord
  *
- * @package Hatch\Inspections\Model\Entities\Inspection\MongoDB\MongoDM
+ * @package Hatch\SocialNetwork\Model\Entities\Posts\MongoDB\MongoDM
  */
-class CommentActiveRecord extends AbstractActiveRecord
+class CommentsActiveRecord extends AbstractActiveRecord
 {
     public static $attrs
         = [
